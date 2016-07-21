@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Portrait View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Portrait View Controller" id="BYZ-38-t0r" customClass="PortraitViewController" customModule="DeviceOrientationSegue" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,69 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Portrait View Controller" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xMC-un-vgW">
+                                <rect key="frame" x="211" y="289" width="179" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="179" id="5X9-Pd-AtA"/>
+                                    <constraint firstAttribute="height" constant="21" id="Uw4-am-BAx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xMC-un-vgW" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="IbL-WM-RvV"/>
+                            <constraint firstItem="xMC-un-vgW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fTX-5R-gZN"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <segue destination="9Wl-ps-oeZ" kind="presentation" identifier="toLandscapeScene" id="1R8-d8-2a6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-448.5" y="-287.25"/>
+        </scene>
+        <!--Landscape View Controller-->
+        <scene sceneID="hMZ-dk-qY6">
+            <objects>
+                <viewController title="Landscape View Controller" id="9Wl-ps-oeZ" customClass="LandscapeViewController" customModule="DeviceOrientationSegue" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ejr-uY-KeO"/>
+                        <viewControllerLayoutGuide type="bottom" id="mji-Zz-7nX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FK0-fz-bGE">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Landscape View Controller" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DEM-jd-8BE">
+                                <rect key="frame" x="198" y="289" width="205" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="3sP-mY-iVP"/>
+                                    <constraint firstAttribute="width" constant="205" id="6Hx-Me-3iU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="DEM-jd-8BE" firstAttribute="centerY" secondItem="FK0-fz-bGE" secondAttribute="centerY" id="0sQ-Su-xWx"/>
+                            <constraint firstItem="DEM-jd-8BE" firstAttribute="centerX" secondItem="FK0-fz-bGE" secondAttribute="centerX" id="flO-d5-THp"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="gs7-qb-Qyv" kind="unwind" identifier="unwindSegueToPortrait" unwindAction="returnFromSegueActions:" id="7uX-sW-lv2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gwq-id-KAx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="gs7-qb-Qyv" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="475.5" y="-287.25"/>
         </scene>
     </scenes>
 </document>
