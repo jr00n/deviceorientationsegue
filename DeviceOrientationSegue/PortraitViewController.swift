@@ -25,7 +25,7 @@ class PortraitViewController: UIViewController {
     }
 
     override func willAnimateRotationToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
-        print("orientation change")
+        
         if (UIDeviceOrientationIsLandscape(UIDevice.currentDevice().orientation)) {
             self.performSegueWithIdentifier("toLandscapeScene", sender: self)
         }
